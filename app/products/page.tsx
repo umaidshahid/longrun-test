@@ -62,18 +62,18 @@ export default function ProductsPage() {
       {/* Header */}
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <Package className="h-8 w-8" />
+              <Package className="h-6 w-6 sm:h-8 sm:w-8" />
               <div>
-                <h1 className="text-2xl font-bold">Product Inventory</h1>
-                <p className="text-sm text-muted-foreground">
+                <h1 className="text-xl sm:text-2xl font-bold">Product Inventory</h1>
+                <p className="text-xs sm:text-sm text-muted-foreground hidden sm:block">
                   Manage and browse your product catalog
                 </p>
               </div>
             </div>
             <Link href="/">
-              <Button variant="outline">← Back to Home</Button>
+              <Button variant="outline" size="sm" className="w-full sm:w-auto">← Back to Home</Button>
             </Link>
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function ProductsPage() {
         />
 
         {/* Sort Controls and Results Count */}
-        <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
           <SortControls sort={sort} onSortChange={handleSortChange} />
           <div className="text-sm text-muted-foreground">
             {!loading && `${pagination.totalCount} products found`}

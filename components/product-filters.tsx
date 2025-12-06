@@ -31,23 +31,24 @@ export function ProductFiltersComponent({
     filters.stockStatus !== 'all';
 
   return (
-    <div className="bg-card border rounded-lg p-6 mb-6">
+    <div className="bg-card border rounded-lg p-4 sm:p-6 mb-6">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg font-semibold">Filters</h2>
+        <h2 className="text-base sm:text-lg font-semibold">Filters</h2>
         {hasActiveFilters && (
           <Button
             variant="outline"
             size="sm"
             onClick={onClearFilters}
-            className="gap-2"
+            className="gap-1 sm:gap-2"
           >
             <X className="h-4 w-4" />
-            Clear All
+            <span className="hidden sm:inline">Clear All</span>
+            <span className="sm:hidden">Clear</span>
           </Button>
         )}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         {/* Search */}
         <div className="space-y-2">
           <Label htmlFor="search">Search by Name</Label>

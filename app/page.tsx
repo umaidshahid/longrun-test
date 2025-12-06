@@ -31,11 +31,12 @@ async function CTAButton() {
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col">
-      <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-        <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
-          <Link href={"/"} className="flex items-center gap-2 font-semibold">
+      <nav className="w-full flex justify-center border-b border-b-foreground/10 min-h-16">
+        <div className="w-full max-w-5xl flex justify-between items-center p-3 px-4 sm:px-5 text-sm">
+          <Link href={"/"} className="flex items-center gap-2 font-semibold text-sm sm:text-base">
             <Package className="h-5 w-5" />
-            Product Inventory
+            <span className="hidden sm:inline">Product Inventory</span>
+            <span className="sm:hidden">Inventory</span>
           </Link>
           <Suspense>
             <AuthButton />
@@ -43,15 +44,15 @@ export default function Home() {
         </div>
       </nav>
 
-      <div className="flex-1 flex flex-col items-center justify-center px-5">
+      <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-5 py-8 sm:py-0">
         <div className="max-w-2xl text-center space-y-6">
-          <div className="flex justify-center mb-8">
-            <Package className="h-16 w-16 text-foreground/60" />
+          <div className="flex justify-center mb-6 sm:mb-8">
+            <Package className="h-12 w-12 sm:h-16 sm:w-16 text-foreground/60" />
           </div>
-          <h1 className="text-4xl font-bold tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Product Inventory System
           </h1>
-          <p className="text-lg text-foreground/60">
+          <p className="text-base sm:text-lg text-foreground/60">
             Manage your product catalog with ease. Track inventory, organize categories, and keep your business running smoothly.
           </p>
           <div className="flex justify-center pt-4">

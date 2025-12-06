@@ -19,12 +19,12 @@ export function PaginationControls({
   const endItem = Math.min(currentPage * perPage, totalCount);
 
   return (
-    <div className="flex items-center justify-between gap-4 py-4">
-      <div className="text-sm text-muted-foreground">
+    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-4">
+      <div className="text-xs sm:text-sm text-muted-foreground order-2 sm:order-1">
         Showing {startItem} to {endItem} of {totalCount} products
       </div>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 order-1 sm:order-2">
         <Button
           variant="outline"
           size="sm"
@@ -33,7 +33,7 @@ export function PaginationControls({
           className="gap-1"
         >
           <ChevronLeft className="h-4 w-4" />
-          Previous
+          <span className="hidden sm:inline">Previous</span>
         </Button>
 
         <div className="flex items-center gap-1">
@@ -75,7 +75,7 @@ export function PaginationControls({
           disabled={currentPage === totalPages || totalPages === 0}
           className="gap-1"
         >
-          Next
+          <span className="hidden sm:inline">Next</span>
           <ChevronRight className="h-4 w-4" />
         </Button>
       </div>

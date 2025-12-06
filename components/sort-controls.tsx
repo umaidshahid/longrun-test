@@ -43,14 +43,14 @@ export function SortControls({ sort, onSortChange }: SortControlsProps) {
 
   return (
     <div className="flex items-center gap-2 flex-wrap">
-      <span className="text-sm font-medium">Sort by:</span>
+      <span className="text-xs sm:text-sm font-medium whitespace-nowrap">Sort by:</span>
       {sortOptions.map((option) => (
         <Button
           key={option.value}
           variant={sort.field === option.value ? 'default' : 'outline'}
           size="sm"
           onClick={() => toggleSort(option.value)}
-          className="gap-2"
+          className="gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3"
         >
           {option.label}
           {getSortIcon(option.value)}
